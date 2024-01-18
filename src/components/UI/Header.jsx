@@ -1,5 +1,7 @@
 export default function Header() {
     return (
-        <h1>HEADER TEST</h1>
+        <header>
+         <h1>Lacey Trokey</h1>
+        </header>
     )
 }

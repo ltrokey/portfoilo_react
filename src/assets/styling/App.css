@@ -1,0 +1,81 @@
+@import url("https://fonts.googleapis.com/css2?family=Oooh+Baby&family=Delius+Swash+Caps&family=Great+Vibes&family=Red+Hat+Display:ital,wght@1,300&display=swap");
+
+/* Google Font Families */
+/* font-family: 'Delius Swash Caps', cursive;
+font-family: 'Great Vibes', cursive;
+font-family: 'Red Hat Display', sans-serif;
+font-family: "Oooh Baby", cursive; */
+
+#root {
+  --primary-color: #00312e;
+  --primaryMedium-color: #23544c;
+  --primaryLight-color: #399382;
+  --secondaryDark-color: #e090ad;
+  --secondaryLight-color: #f0ece9;
+  --accent-color: #a82435;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  font-family: "Arial", sans-serif;
+  font-size: 16px;
+  background-color: var(--primary-color);
+}
+
+header {
+  padding-left: 5vh;
+  height: 20vh;
+  background: linear-gradient(
+    to right,
+    var(--primary-color),
+    var(--primaryLight-color),
+    var(--secondaryLight-color)
+  );
+  display: flex;
+  align-items: center;
+  justify-content: left;
+}
+
+h1 {
+  margin: 0;
+  font-family: "Great Vibes", cursive;
+  font-size: 4rem;
+  color: var(--secondaryLight-color);
+}
+
+.nav {
+  display: flex;
+  justify-content: flex-end;
+  background-color: var(--secondaryLight-color);
+  color: var(--accent-color);
+  font-family: "Delius Swash Caps", cursive;
+  font-size: 1.5rem;
+}
+
+.nav-link {
+  color: var(--accent-color);
+  transition: color 0.3s ease;
+  &:hover,
+  &:active,
+  &:focus {
+    color: var(--secondaryLight-color);
+    background-color: var(--accent-color);
+    border-radius: 8px;
+  }
+}
+
+@media (max-width: 320px) {
+  header {
+    padding-left: 0vh;
+  }
+  .nav {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+@media (max-width: 768px) {
+}

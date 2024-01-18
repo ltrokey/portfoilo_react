@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 export default function Nav({ links }) {
     return (
       <nav>
-        <ul className="nav justify-content-end">
+        <ul className="nav">
           {links.map((link, index) => (
             <li className="nav-item" key={index}>
               {link}

@@ -1,0 +1,18 @@
+:root {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  --primary-color: #00312e;
+  --primaryMedium-color: #23544c;
+  --primaryLight-color: #399382;
+  --secondaryDark-color: #e090ad;
+  --secondaryLight-color: #efe5de;
+  --accent-color: #a82435;
+}
+
+@media (max-width: 768px) {
+}
