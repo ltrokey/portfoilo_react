@@ -1,5 +1,7 @@
 export default function Contact() {
     return (
-        <h1>CONTACT TEST</h1>
+        <div className="container">
+            <h2>Contact</h2>
+        </div>
     )
 }

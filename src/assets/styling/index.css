@@ -1,3 +1,14 @@
+/* Box sizing */
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
 :root {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 

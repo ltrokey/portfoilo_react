@@ -1,5 +1,13 @@
+import { SocialIcon } from 'react-social-icons'
+
 export default function Footer() {
     return (
-        <h1>FOOTER TEST</h1>
+        <footer>
+            <div className='icon'>
+                <SocialIcon url="https://www.linkedin.com/in/lacey-trokey-3b2837106/" />
+                <SocialIcon url="https://github.com/ltrokey" />
+                <SocialIcon url="https://www.facebook.com/zltrokey" />
+            </div>
+        </footer>
     )
 }

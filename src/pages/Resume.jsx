@@ -1,5 +1,7 @@
 export default function Resume() {
     return (
-        <h1>RESUME TEST</h1>
+        <div className="container">
+           <h2>Resume</h2>
+        </div>
     )
 }
