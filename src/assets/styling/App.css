@@ -69,6 +69,7 @@ h3 {
 }
 
 p {
+  padding-left: 3%;
   color: var(--secondaryLight-color);
   font-family: Calibri, "Trebuchet MS", sans-serif;
   font-size: 16px;
@@ -151,12 +152,29 @@ img {
   text-align: center;
 }
 
+.form-label {
+  padding-top: 2%;
+  color: var(--primaryLight-color);
+}
+.btn-primary {
+  margin: 1%;
+  color: var(--secondaryLight-color);
+  background-color: var(--accent-color);
+  border: var(--secondaryLight-color);
+}
+
 .icon {
   padding: 10px;
   width: 100%;
   display: flex;
   justify-content: center;
   gap: 40px;
+}
+
+.error-message {
+  color: var(--accent-color);
+  font-weight: bolder;
+  font-family: Calibri, "Trebuchet MS", sans-serif;
 }
 
 @media (max-width: 425px) {
