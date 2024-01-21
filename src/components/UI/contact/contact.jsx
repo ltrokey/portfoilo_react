@@ -57,7 +57,12 @@ export default function ContactForm() {
     setEmailError("");
   };
   return (
-    <Form name="contact-form" method="POST" onSubmit={handleSubmit} netlify>
+    <Form
+      name="contact-form"
+      method="POST"
+      onSubmit={handleSubmit}
+      data-netlify="true"
+    >
       <input type="hidden" name="form-name" value="contact-form" />
 
       <Form.Group controlId="formName">
