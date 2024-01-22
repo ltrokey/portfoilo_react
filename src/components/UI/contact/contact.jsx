@@ -1,106 +1,107 @@
-import { useState } from "react";
-import { emailValidate } from "../../utils/helper";
+// import { useState } from "react";
+// import { emailValidate } from "../../utils/helper";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 
 export default function ContactForm() {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [message, setMessage] = useState("");
-  const [nameError, setNameError] = useState("");
-  const [emailError, setEmailError] = useState("");
-  const [success, setSuccess] = useState(false);
+  // const [name, setName] = useState("");
+  // const [email, setEmail] = useState("");
+  // const [message, setMessage] = useState("");
+  // const [nameError, setNameError] = useState("");
+  // const [emailError, setEmailError] = useState("");
+  // const [success, setSuccess] = useState(false);
 
-  const handleNameBlur = () => {
-    if (!name.trim()) {
-      setNameError("Invalid - Please enter your name.");
-    } else {
-      setNameError("");
-    }
-  };
+  // const handleNameBlur = () => {
+  //   if (!name.trim()) {
+  //     setNameError("Invalid - Please enter your name.");
+  //   } else {
+  //     setNameError("");
+  //   }
+  // };
 
-  const handleEmailBlur = () => {
-    if (!email.trim()) {
-      setEmailError("Invalid - Please enter your Email");
-    } else if (!emailValidate(email)) {
-      setEmailError("Oops 🤔, Please check your email address");
-    } else {
-      setEmailError("");
-    }
-  };
+  // const handleEmailBlur = () => {
+  //   if (!email.trim()) {
+  //     setEmailError("Invalid - Please enter your Email");
+  //   } else if (!emailValidate(email)) {
+  //     setEmailError("Oops 🤔, Please check your email address");
+  //   } else {
+  //     setEmailError("");
+  //   }
+  // };
 
-  const handleChange = (e) => {
-    const { target } = e;
-    const inputType = target.name;
-    const inputValue = target.value;
+  // const handleChange = (e) => {
+  //   const { target } = e;
+  //   const inputType = target.name;
+  //   const inputValue = target.value;
 
-    if (inputType === "name") {
-      setName(inputValue);
-    } else if (inputType === "email") {
-      setEmail(inputValue);
-    } else if (inputType === "message") {
-      setMessage(inputValue);
-    }
-  };
+  //   if (inputType === "name") {
+  //     setName(inputValue);
+  //   } else if (inputType === "email") {
+  //     setEmail(inputValue);
+  //   } else if (inputType === "message") {
+  //     setMessage(inputValue);
+  //   }
+  // };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
 
-    if (!emailValidate(email) || !name) {
-      alert("Invalid entry, please check email and name.");
-      return;
-    }
+  //   if (!emailValidate(email) || !name) {
+  //     alert("Invalid entry, please check email and name.");
+  //     return;
+  //   }
 
-    setSuccess(true);
+  //   setSuccess(true);
 
-    setName("");
-    setEmail("");
-    setMessage("");
-    setNameError("");
-    setEmailError("");
-  };
+  //   setName("");
+  //   setEmail("");
+  //   setMessage("");
+  //   setNameError("");
+  //   setEmailError("");
+  // };
   return (
-    <Form name="contact" method="POST" onSubmit={handleSubmit}>
+    // <Form name="contact" method="POST" onSubmit={handleSubmit}>
+    <Form name="contact-form" method="POST">
       {/* Added for Netlify */}
       <input type="hidden" name="form-name" value="contact" />
 
       <Form.Group controlId="formName">
         <Form.Label>Name</Form.Label>
         <Form.Control
-          value={name}
+          // value={name}
           type="text"
           placeholder="First & Last Name"
           name="name"
-          onChange={handleChange}
-          onBlur={handleNameBlur}
+          // onChange={handleChange}
+          // onBlur={handleNameBlur}
           required
         />
-        {nameError && <div className="error-message">{nameError}</div>}
+        {/* {nameError && <div className="error-message">{nameError}</div>} */}
       </Form.Group>
 
       <Form.Group controlId="formEmail">
         <Form.Label>Email address</Form.Label>
         <Form.Control
-          value={email}
+          // value={email}
           type="email"
           placeholder="Your Email"
           name="email"
-          onChange={handleChange}
-          onBlur={handleEmailBlur}
+          // onChange={handleChange}
+          // onBlur={handleEmailBlur}
           required
         />
-        {emailError && <div className="error-message">{emailError}</div>}
+        {/* {emailError && <div className="error-message">{emailError}</div>} */}
       </Form.Group>
 
       <Form.Group controlId="formMessage">
         <Form.Label>Message</Form.Label>
         <Form.Control
-          value={message}
+          // value={message}
           as="textarea"
           rows={5}
           placeholder="Your Message"
           name="message"
-          onChange={handleChange}
+          // onChange={handleChange}
           required
         />
       </Form.Group>
@@ -109,12 +110,12 @@ export default function ContactForm() {
         Send
       </Button>
 
-      {success && (
+      {/* {success && (
         <div className="success-alert">
           <p>Message sent!</p>
           <p>I look forward to connecting with you!</p>
         </div>
-      )}
+      )} */}
     </Form>
   );
 }
