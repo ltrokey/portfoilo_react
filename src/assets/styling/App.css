@@ -177,10 +177,6 @@ img {
   font-family: Calibri, "Trebuchet MS", sans-serif;
 }
 
-.success-alert {
-  text-align: center;
-}
-
 @media (max-width: 425px) {
   body {
     min-height: auto;

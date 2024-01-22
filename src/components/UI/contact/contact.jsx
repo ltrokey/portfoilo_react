@@ -9,7 +9,6 @@ export default function ContactForm() {
   const [message, setMessage] = useState("");
   const [nameError, setNameError] = useState("");
   const [emailError, setEmailError] = useState("");
-  const [success, setSuccess] = useState(false);
 
   const handleNameBlur = () => {
     if (!name.trim()) {
@@ -23,7 +22,7 @@ export default function ContactForm() {
     if (!email.trim()) {
       setEmailError("Invalid - Please enter your Email");
     } else if (!emailValidate(email)) {
-      setEmailError("Oops 🤔, Please check your email address");
+      setEmailError("Opps 🤔, Please check your email address");
     } else {
       setEmailError("");
     }
@@ -51,8 +50,6 @@ export default function ContactForm() {
       return;
     }
 
-    setSuccess(true);
-
     setName("");
     setEmail("");
     setMessage("");
@@ -65,14 +62,8 @@ export default function ContactForm() {
       method="POST"
       onSubmit={handleSubmit}
       data-netlify="true"
-      data-netlify-honeypot="bot-field"
     >
-      {/* Hidden Honeypot Field */}
-      <div style={{ display: "none" }}>
-        <label>
-          Don’t fill this out if you're human: <input name="bot-field" />
-        </label>
-      </div>
+      <input type="hidden" name="form-name" value="contact-form" />
 
       <Form.Group controlId="formName">
         <Form.Label>Name</Form.Label>
@@ -118,13 +109,6 @@ export default function ContactForm() {
       <Button variant="primary" type="submit">
         Submit
       </Button>
-
-      {success && (
-        <div className="success-alert">
-          <p>Message sent!</p>
-          <p>I look forward to connecting with you!</p>
-        </div>
-      )}
     </Form>
   );
 }
