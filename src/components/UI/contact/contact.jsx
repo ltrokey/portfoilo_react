@@ -106,7 +106,7 @@ export default function ContactForm() {
       </Form.Group>
 
       <Button variant="primary" type="submit">
-        Submit
+        Send
       </Button>
 
       {success && (

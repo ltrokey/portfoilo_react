@@ -163,6 +163,11 @@ img {
   border: var(--secondaryLight-color);
 }
 
+.btn:hover {
+  background-color: var(--secondaryDark-color);
+  border-color: var(--secondaryLight-color);
+}
+
 .icon {
   padding: 10px;
   width: 100%;
