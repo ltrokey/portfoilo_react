@@ -64,15 +64,12 @@ export default function ContactForm() {
       name="contact-form"
       method="POST"
       onSubmit={handleSubmit}
+      // Added for Netlify
       data-netlify="true"
       data-netlify-honeypot="bot-field"
     >
-      {/* Hidden Honeypot Field */}
-      <div style={{ display: "none" }}>
-        <label>
-          Don’t fill this out if you're human: <input name="bot-field" />
-        </label>
-      </div>
+      {/* Added for Netlify */}
+      <input type="hidden" name="form-name" value="contact" />
 
       <Form.Group controlId="formName">
         <Form.Label>Name</Form.Label>
