@@ -61,7 +61,7 @@ export default function ContactForm() {
   };
   return (
     <Form
-      name="contact-form"
+      name="contact"
       method="POST"
       onSubmit={handleSubmit}
       // Added for Netlify
@@ -69,7 +69,7 @@ export default function ContactForm() {
       data-netlify-honeypot="bot-field"
     >
       {/* Added for Netlify */}
-      <input type="hidden" name="form-name" value="contact-form" />
+      <input type="hidden" name="form-name" value="contact" />
 
       <Form.Group controlId="formName">
         <Form.Label>Name</Form.Label>
