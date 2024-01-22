@@ -69,7 +69,7 @@ export default function ContactForm() {
       data-netlify-honeypot="bot-field"
     >
       {/* Added for Netlify */}
-      <input type="hidden" name="form-name" value="contact" />
+      <input type="hidden" name="form-name" value="contact-form" />
 
       <Form.Group controlId="formName">
         <Form.Label>Name</Form.Label>
@@ -113,7 +113,7 @@ export default function ContactForm() {
       </Form.Group>
 
       <Button variant="primary" type="submit">
-        Submit
+        Send
       </Button>
 
       {success && (
