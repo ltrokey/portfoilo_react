@@ -60,14 +60,7 @@ export default function ContactForm() {
     setEmailError("");
   };
   return (
-    <Form
-      name="contact-form"
-      method="POST"
-      onSubmit={handleSubmit}
-      // Added for Netlify
-      data-netlify="true"
-      data-netlify-honeypot="bot-field"
-    >
+    <Form name="contact" method="POST" onSubmit={handleSubmit}>
       {/* Added for Netlify */}
       <input type="hidden" name="form-name" value="contact" />
 
