@@ -176,16 +176,6 @@ img {
   gap: 40px;
 }
 
-.error-message {
-  color: var(--accent-color);
-  font-weight: bolder;
-  font-family: Calibri, "Trebuchet MS", sans-serif;
-}
-
-.success-alert {
-  text-align: center;
-}
-
 @media (max-width: 425px) {
   body {
     min-height: auto;
