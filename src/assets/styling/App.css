@@ -163,6 +163,11 @@ img {
   border: var(--secondaryLight-color);
 }
 
+.btn:hover {
+  background-color: var(--secondaryDark-color);
+  border-color: var(--secondaryLight-color);
+}
+
 .icon {
   padding: 10px;
   width: 100%;
@@ -175,10 +180,6 @@ img {
   color: var(--accent-color);
   font-weight: bolder;
   font-family: Calibri, "Trebuchet MS", sans-serif;
-}
-
-.success-alert {
-  text-align: center;
 }
 
 @media (max-width: 425px) {
