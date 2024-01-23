@@ -1,4 +1,4 @@
-import CarouselPhotos from "../components/UI/aboutPage/Carousel";
+import CarouselPhotos from "../components/UI/aboutPage";
 
 export default function AboutMe() {
   return (

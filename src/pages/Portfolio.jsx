@@ -1,4 +1,4 @@
-import ProjectCard from "../components/UI/project/projectCard";
+import ProjectCard from "../components/UI/project";
 import { projectData } from "../components/UI/project/projectData";
 
 export default function Portfolio() {
