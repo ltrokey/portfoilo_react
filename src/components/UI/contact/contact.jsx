@@ -7,7 +7,12 @@ export default function ContactForm() {
   const [emailError, setEmailError] = useState(false);
   const [messageError, setMessageError] = useState(false);
 
-  const handleBlur = (fieldName, event) => {
+  // const validateEmail = (email) => {
+  //   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  //   return emailRegex.test(email);
+  // };
+
+  const handleBlur = (event, fieldName) => {
     switch (fieldName) {
       case "name":
         setNameError(!event.target.value);
@@ -19,6 +24,7 @@ export default function ContactForm() {
         setMessageError(!event.target.value);
         break;
       default:
+        console.log(fieldName);
         break;
     }
   };
