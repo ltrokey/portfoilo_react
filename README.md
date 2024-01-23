@@ -37,7 +37,6 @@ Welcome to my portfolio, where creativity meets code! This application was craft
    - This application utilizes Node.js along with the following key dependencies:
 
    ```
-    mysql: ^2.18.1
     bootstrap
     react
     react-bootstrap
