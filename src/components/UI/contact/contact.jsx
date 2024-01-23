@@ -13,6 +13,10 @@ export default function ContactForm() {
   // };
 
   const handleBlur = (event, fieldName) => {
+    console.log("Event", event);
+    console.log("Event.target", event.target);
+    console.log("Event.target.name", event.target.name);
+    console.log("Event.target.value", event.target.value);
     switch (fieldName) {
       case "name":
         setNameError(!event.target.value);
@@ -41,7 +45,7 @@ export default function ContactForm() {
           placeholder="First & Last Name"
           name="name"
           required
-          onBlur={() => handleBlur("name")}
+          onBlur={handleBlur}
         />
         {nameError && <p style={{ color: "#a82435" }}>Name is required</p>}
       </Form.Group>
@@ -53,7 +57,7 @@ export default function ContactForm() {
           placeholder="Your Email"
           name="email"
           required
-          onBlur={() => handleBlur("email")}
+          onBlur={handleBlur}
         />
         {emailError && <p style={{ color: "#a82435" }}>Email is required</p>}
       </Form.Group>
@@ -66,7 +70,7 @@ export default function ContactForm() {
           placeholder="Your Message"
           name="message"
           required
-          onBlur={() => handleBlur("message")}
+          onBlur={handleBlur}
         />
         {messageError && (
           <p style={{ color: "#a82435" }}>Message is required</p>
