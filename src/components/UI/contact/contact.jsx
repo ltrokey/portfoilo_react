@@ -1,9 +1,30 @@
+import { useState } from "react";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 
 export default function ContactForm() {
+  const [nameError, setNameError] = useState(false);
+  const [emailError, setEmailError] = useState(false);
+  const [messageError, setMessageError] = useState(false);
+
+  const handleBlur = (fieldName, event) => {
+    switch (fieldName) {
+      case "name":
+        setNameError(!event.target.value);
+        break;
+      case "email":
+        setEmailError(!event.target.value);
+        break;
+      case "message":
+        setMessageError(!event.target.value);
+        break;
+      default:
+        break;
+    }
+  };
+
   return (
-    <Form name="contact-form" method="POST" netlify success="/">
+    <Form name="contact-form" method="POST">
       {/* Added for Netlify */}
       <input type="hidden" name="form-name" value="contact" />
 
@@ -14,7 +35,9 @@ export default function ContactForm() {
           placeholder="First & Last Name"
           name="name"
           required
+          onBlur={() => handleBlur("name")}
         />
+        {nameError && <p style={{ color: "#a82435" }}>Name is required</p>}
       </Form.Group>
 
       <Form.Group controlId="formEmail">
@@ -24,7 +47,9 @@ export default function ContactForm() {
           placeholder="Your Email"
           name="email"
           required
+          onBlur={() => handleBlur("email")}
         />
+        {emailError && <p style={{ color: "#a82435" }}>Email is required</p>}
       </Form.Group>
 
       <Form.Group controlId="formMessage">
@@ -35,7 +60,11 @@ export default function ContactForm() {
           placeholder="Your Message"
           name="message"
           required
+          onBlur={() => handleBlur("message")}
         />
+        {messageError && (
+          <p style={{ color: "#a82435" }}>Message is required</p>
+        )}
       </Form.Group>
 
       <Button variant="primary" type="submit">
