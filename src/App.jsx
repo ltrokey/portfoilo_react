@@ -1,7 +1,7 @@
 import { Outlet } from "react-router-dom";
-import Header from "./components/UI/Header";
-import Nav from "./components/Nav";
-import Footer from "./components/UI/Footer";
+import Header from "./components/header";
+import Nav from "./components/nav";
+import Footer from "./components/footer";
 
 function App() {
   return (

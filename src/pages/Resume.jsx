@@ -1,4 +1,4 @@
-import ResumeLink from "../components/UI/resume/resumeDownload";
+import ResumeLink from "../components/UI/resume";
 
 export default function Resume() {
   return (

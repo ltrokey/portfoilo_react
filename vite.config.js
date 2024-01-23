@@ -8,9 +8,9 @@ export default defineConfig({
     port: 3000,
     open: true,
   },
-  // test: {
-  //   globals: true,
-  //   enviroment: "happy-dom",
-  //   setupFiles: "./src/tests/setup.js",
-  // },
+  test: {
+    globals: true,
+    enviroment: "happy-dom",
+    setupFiles: "./src/tests/setup.js",
+  },
 });

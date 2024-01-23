@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import ResumePDF from "../resume/ltrokey_resume.pdf";
+import ResumePDF from "./ltrokey_resume.pdf";
 
 export default function DownloadResume() {
   useEffect(() => {
