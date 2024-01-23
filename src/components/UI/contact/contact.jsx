@@ -1,35 +1,38 @@
 import { useState } from "react";
+import { emailValidate } from "../../utils/helper";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 
 export default function ContactForm() {
-  const [nameError, setNameError] = useState(false);
-  const [emailError, setEmailError] = useState(false);
-  const [messageError, setMessageError] = useState(false);
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [nameError, setNameError] = useState("");
+  const [emailError, setEmailError] = useState("");
 
-  // const validateEmail = (email) => {
-  //   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  //   return emailRegex.test(email);
-  // };
-
-  const handleBlur = (event, fieldName) => {
-    console.log("Event", event);
-    console.log("Event.target", event.target);
-    console.log("Event.target.name", event.target.name);
-    console.log("Event.target.value", event.target.value);
-    switch (fieldName) {
-      case "name":
-        setNameError(!event.target.value);
-        break;
-      case "email":
-        setEmailError(!event.target.value);
-        break;
-      case "message":
-        setMessageError(!event.target.value);
-        break;
-      default:
-        console.log(fieldName);
-        break;
+  const handleNameBlur = () => {
+    if (!name.trim()) {
+      setNameError("Invalid - Please enter your name.");
+    } else {
+      setNameError("");
+    }
+  };
+  const handleEmailBlur = () => {
+    if (!email.trim()) {
+      setEmailError("Invalid - Please enter your Email");
+    } else if (!emailValidate(email)) {
+      setEmailError("Oops 🤔, Please check your email address");
+    } else {
+      setEmailError("");
+    }
+  };
+  const handleChange = (e) => {
+    const { target } = e;
+    const inputType = target.name;
+    const inputValue = target.value;
+    if (inputType === "name") {
+      setName(inputValue);
+    } else {
+      setEmail(inputValue);
     }
   };
 
@@ -45,9 +48,10 @@ export default function ContactForm() {
           placeholder="First & Last Name"
           name="name"
           required
-          onBlur={handleBlur}
+          onChange={handleChange}
+          onBlur={handleNameBlur}
         />
-        {nameError && <p style={{ color: "#a82435" }}>Name is required</p>}
+        {nameError && <div className="error-message">{nameError}</div>}
       </Form.Group>
 
       <Form.Group controlId="formEmail">
@@ -57,9 +61,10 @@ export default function ContactForm() {
           placeholder="Your Email"
           name="email"
           required
-          onBlur={handleBlur}
+          onChange={handleChange}
+          onBlur={handleEmailBlur}
         />
-        {emailError && <p style={{ color: "#a82435" }}>Email is required</p>}
+        {emailError && <div className="error-message">{emailError}</div>}
       </Form.Group>
 
       <Form.Group controlId="formMessage">
@@ -70,11 +75,7 @@ export default function ContactForm() {
           placeholder="Your Message"
           name="message"
           required
-          onBlur={handleBlur}
         />
-        {messageError && (
-          <p style={{ color: "#a82435" }}>Message is required</p>
-        )}
       </Form.Group>
 
       <Button variant="primary" type="submit">
