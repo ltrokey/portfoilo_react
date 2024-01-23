@@ -3,7 +3,7 @@ import Button from "react-bootstrap/Button";
 
 export default function ContactForm() {
   return (
-    <Form name="contact-form" method="POST">
+    <Form name="contact-form" method="POST" netlify success="/">
       {/* Added for Netlify */}
       <input type="hidden" name="form-name" value="contact" />
 
